@@ -1,0 +1,40 @@
+package util;
+
+public class CalcularDados {
+	
+	public Double soma(Double n1, Double n2) {
+		return n1 + n2;
+	}
+	
+	public Double subtracao(Double n1, Double n2) {
+		return n1 - n2;
+	}
+	
+	public Double multiplicacao(Double n1, Double n2) {
+		return n1 * n2;
+	}
+	
+	public Double divisao(Double n1, Double n2) throws Exception {
+		
+		if(n2.equals(0.)) {
+			throw new Exception("N2 nao pode ser zero");
+		}
+		return n1 / n2;
+	}
+	
+	public static void main(String[] args) {
+		try {
+			CalcularDados dados = new CalcularDados();
+			System.out.println(dados.soma(10., 2.));
+			System.out.println(dados.subtracao(10., 2.));
+			System.out.println(dados.divisao(10., 0.));
+			System.out.println(dados.multiplicacao(10., 2.));
+		}catch (Exception e) {
+			System.out.println("Erro :" + e.getMessage());
+			
+			e.printStackTrace();
+		}
+		System.out.println("Continua");
+	}
+
+}
